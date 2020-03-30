@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>BUY VIP Account</title>
+  </head>
+  <body>
+    <div class="container m-5">
+      <h1>BUY VIP Account in CS1.6 Base Builder</h1>
+      <h4>Dummy test</h4>
+      <hr />
+      <% if(typeof message != "undefined") {%> 
+        
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong><%= message %></strong> 
+        </div>
+        
+        <script>
+          $(".alert").alert();
+        </script>  
+      <%}%> 
+      
+      <% if(typeof errors !=
+      "undefined" && errors.length>0) {%>
+
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <% for(let e of errors) { %>
+        <p><%= e %></p>
+        <% } %>
+      </div>
+
+      <script>
+        $(".alert").alert();
+      </script>
+
+      <% } %>
+      <form action="/" method="POST" class="w-100">
+        <div class="form-group">
+          <h4>Choose a package</h4>
+          <table class="table table-stripped">
+            <thead>
+              <tr>
+                <th>Package</th>
+                <th>Price</th>
+                <th>Get</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Head Admin</td>
+                <td>10$/month (free for now)</td>
+                <td>
+                  <input
+                    type="radio"
+                    value="head"
+                    name="package"
+                    class="form-control"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Full Admin</td>
+                <td>5$/month (free for now)</td>
+                <td>
+                  <input
+                    type="radio"
+                    value="full"
+                    name="package"
+                    class="form-control"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>VIP</td>
+                <td>2$/40days (free for now)</td>
+                <td>
+                  <input
+                    type="radio"
+                    value="vip"
+                    name="package"
+                    class="form-control"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h4>Your account informations</h4>
+        <div class="form-group">
+          <label for="nickname">Nickname</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nickname"
+            id="nickname"
+            placeholder="Nickname"
+            value="<%= typeof nickname != 'undefined'?nickname:'' %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="text"
+            class="form-control"
+            name="password"
+            id="password"
+            placeholder="Password"
+            value="<%= typeof password != 'undefined'?password:'' %>"
+            required
+          />
+        </div>
+        <p>
+          <small>To use password : <b>setinfo _pw your_password</b></small>
+        </p>
+        <button class="btn btn-success">Submit</button>
+      </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+      integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
